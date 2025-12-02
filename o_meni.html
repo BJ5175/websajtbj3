@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O MENI</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tvoj CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- HEADER -->
+        <div class="header-container">
+            <header>
+                <img src="logoheader.png" alt="">
+            </header>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-light w-100" style=" background-color: #c2fabe;">
+            <div class="container" style="background-color: #c2fabe;">
+                <a class="navbar-brand" href="index.html">BJ</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Početna</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" id="link-proizvodi">Proizvodi</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#" id="link-o-nama">O nama</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#">Kontakt</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#" id="link-karijera">Karijera</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="novosti.html" id="novosti">Novosti</a></li>
+                    </ul>
+                    <form class="d-flex no-border" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Pretraživanje" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Pretraži</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- MAIN CONTENT -->
+        <div class=" container mt-3 mb-3" style="background-color: white;">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>O kreatoru stranice</h2>
+                    <img src="borisj.jpg" alt="Boris Josipovic" class="img-fluid rounded-circle mb-3"
+                        style="max-width: 200px;">
+                    <p>Boris Josipović je jako pouzdani i marljiv učenik. Uvijek je spreman pomoći svojim kolegama i
+                        kolegicama. Njegova strast prema programiranju i tehnologiji čini ga izvrsnim prijateljem u svom
+                        razredu. Samo u trećem razredu osnovne škole pomogao je svojoj učiteljici da riješi problem
+                        između računala i projektora. Boris u trećem razredu već zna dosta o računalima. U slobodno
+                        vrijeme voli igrati video igre i istraživati nove tehnologije. Dok je pravio ovu web stranicu,
+                        naučio je puno novih stvari o HTML-u i CSS-u. Dok je zadnji put bio na satu programiranja u BIG
+                        BENU rekao je: "Hvala vam što ste me naučili kako napraviti web stranicu. Sada mogu napraviti
+                        vlastitu stranicu za svoj hobi!" rekao je. Boris je također vrlo kreativan i voli izrađivati
+                        digitalne umjetničke projekte. Svaki put kada je imao neki grupni rad u školi, Boris je uvijek
+                        bio onaj koji je bio sa najboljim prijateljem Tonijem. Toni i Boris su zajedno bili i u vrtiću i
+                        sada u razredu.</p>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-12 text-center">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="projekat1.png" class="d-block w-100" alt="Projekt 1">
+                                <p class="mt-2">Ovo je moj prvi projekat koji sam napravio u Big Benu. Naučio sam kako
+                                    koristiti C# za izradu desktop aplikacija.</p>
+
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="projekat2.png" class="d-block w-100" alt="Projekt 2">
+                                <p class="mt-2">Ovo je moj drugi projekat. Ovaj put sam dodao malo koda kako bi
+                                    aplikacija bila interaktivnija.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="projekat3.png" class="d-block w-100" alt="Projekt 3">
+                                <p class="mt-2">Ovo je moj treći projekat. Naučio sam kako koristiti kod za brži
+                                    razvoj responzivnih aplikacije i računanje dva broja.</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+                <!-- Scroll to Top Button -->
+                <button id="scrollTopBtn" class="btn btn-warning">↑</button>
+
+
+            </div>
+        </div>
+
+
+
+
+        <!-- FOOTER -->
+        <div class="footer mt-3">
+            <div class="container mt-3 mb-3" id="o_nama" style="background-color: #c2fabe;">
+                <div class="row" id="karijera">
+                    <div class="col-sm-3">
+                        <h3>Reklame</h3>
+                        <p>Klikom na ovaj gumb može ova kocka baš biti vaša!!</p>
+                        <button type="button" class="btn btn-success">Prijava</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Kontakt</h3>
+                        <p>Broj telefona: 065 560 888</p>
+                        <p>Email: bokijenajbolji223@gmail.com</p>
+                        <p>Adresa: Dečanska 15, Sarajevo</p>
+                        <p>Radno vrijeme: PON-PET 10:00 - 22:00</p>
+                        <p>SUB 10:00 - 22:00</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Lokacija</h3>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9474.047860752364!2d18.354050118249237!3d43.81616568196758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c952060bd1b5%3A0x43de98f58d63e66f!2sEdukativni%20centar%20Big%20Ben!5e1!3m2!1shr!2sba!4v1760120072102!5m2!1shr!2sba"
+                            width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Pošaljite mail:</h3>
+                        <input class="form-control me-2" type="Email" placeholder="example.123@gmail.com"
+                            aria-label="Email">
+                        <p>Poruka:</p>
+                        <textarea id="textmessage" name="textmessages" rows="4" cols="36" placeholder=""></textarea>
+                        <button type="button" class="btn btn-primary mt-2">Pošalji</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <!-- JS -->
+        <script src="script.js"></script>
+</body>
+
+</html>

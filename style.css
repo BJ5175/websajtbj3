@@ -1,0 +1,444 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* =============================== */
+/* OSNOVNI STILOVI STRANICE */
+/* =============================== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ostatak tvog CSS-a ostaje identičan kao u početnom kodu */
+
+/* =============================== */
+/* OSNOVNI STILOVI STRANICE */
+/* =============================== */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+}
+
+.content {
+    flex: 1; /* Gura footer na dno */
+}
+
+/* =============================== */
+/* HEADER */
+/* =============================== */
+
+.header-container {
+    border: 0px solid black;
+    padding: 0;
+    background-color: white;
+    position: relative;
+    height: 85px; /* Dovoljno da stane logo */
+}
+
+.header-container header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.header-container img {
+    width: 100px !important;
+    height: auto !important;
+    position: absolute;
+    left: 100px;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+}
+
+/* =============================== */
+/* NAVBAR */
+/* =============================== */
+
+.navbar {
+    background-color:#c2fabe !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 70px; /* Povećava visinu navbar-a */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+    font-size: 18px; /* Povećava veličinu teksta */
+}
+
+.navbar .nav-link:hover {
+    color: black !important;
+}
+
+.navbar .btn-outline-success {
+    color: #fff;
+    background-color: #425740;
+    border-color: #fff;
+    font-size: 16px; /* Veće dugme */
+    padding: 8px 20px; /* Proporcionalno */
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: #fff;
+    color: #86b382;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.no-border {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Ako border dolazi sa inputa ili dugmeta */
+.no-border .form-control,
+.no-border .btn {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Po želji možeš dodati zaobljene ivice i boje */
+.no-border .form-control {
+  border-radius: 10px 0 0 10px;
+}
+
+.no-border .btn {
+  border-radius: 0 10px 10px 0;
+  background-color: #445b42; /* tvoja tamnozelena */
+  color: white;
+}
+
+/* =============================== */
+/* CARDS */
+/* =============================== */
+
+#scrollTopBtn {
+  display: none; /* skriven dok ne scrollaš */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+
+
+/* =============================== */
+/* FOOTER */
+/* =============================== */
+.footer {
+    background-color: #c2fabe;
+    color: #fff;
+    padding: 50px 0;
+    margin-top: auto;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.footer h3 {
+    color: #fff;
+    border-bottom: 2px solid #c2fabe;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.footer p,
+.footer a {
+    color: #000;
+    font-size: 15px;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #689960;
+    text-decoration: underline;
+}
+
+/* Sekcije */
+.footer .row {
+    border-bottom: 1px solid #689960;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer .row:last-child {
+    border-bottom: none;
+}
+
+/* Dugme "PRIJAVA" */
+.footer .btn-success {
+    background-color:#689960;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+.footer .btn-success:hover {
+    background-color: #4b6b46;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Dugme "POŠALJI" */
+.footer .btn-primary {
+    background-color:#689960;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 10px 24px;
+}
+
+.footer .btn-primary:hover {
+    background-color:#4b6b46;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Input polja i textarea */
+.footer input,
+.footer textarea {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+    color: #333;
+}
+
+.footer input:focus,
+.footer textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+/* Mapa */
+.footer iframe {
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Donji tekst */
+.footer small,
+.footer .copyright {
+    display: block;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+
+/* =============================== */
+/* RESPONSIVE */
+/* =============================== */
+
+
+    .footer iframe {
+        width: 100%;
+        height: 250px;
+    }
+
+    .header-container img {
+        width: 90px !important;
+        left: 100px; /* prilagođeno mobitelu */
+        top: 15px;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        font-size: 16px; /* manji tekst za mobilni */
+    }
+
+    .navbar .btn-outline-success {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+
+
+
+    /* Style the form element with a border around it */
+form {
+  border: 4px solid #f1f1f1;
+}
+
+/* Add some padding and a grey background color to containers */
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+/* Style the input elements and the submit button */
+input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Add margins to the checkbox */
+input[type=checkbox] {
+  margin-top: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+
+/* Wrapper - NEMA CRNE POZADINE */
+.payment-section-wrapper-no-bg {
+    background-color: #fff; /* Potpuno bijela pozadina */
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Dodajem liniju iznad (kao alternativu crnoj pozadini za razdvajanje) */
+    border-top: 1px solid #ddd;
+}
+
+
+/* Sama Traka s Logotipima (Bijela pozadina s rubovima) */
+.payment-logo-bar {
+    background-color: #fff;
+    border-radius: 30px; /* Zaobljeni rubovi */
+    border: 1px solid #eee; /* Dodajem tanki sivi rub da se bijela traka istakne na bijeloj pozadini */
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: fit-content;
+    height: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Vrlo blaga sjena */
+}
+
+
+.payment-logo-bar img {
+    max-height: 100%;
+    width: auto;
+    margin: 0 5px;
+}
+
+.payment-logo-bar .payu-logos {
+    display: flex;
+    align-items: center;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Centriraj na sredinu ekrana */
+    background-color: #e0ffe0; /* Svetlo zelena pozadina kao na slici */
+}
+
+
+
+.payment-logo-container {
+    background-color: #fff; /* Bela pozadina za "tabletu" */
+    padding: 20px 30px; /* Unutrašnji padding bele "tablete" */
+    border-radius: 30px; /* Više zaobljeni uglovi */
+    display: flex;
+    justify-content: center; /* Centriraj logotipe horizontalno */
+    align-items: center; /* Centriraj logotipe vertikalno */
+    flex-wrap: wrap; /* Omogući prelamanje u novi red ako je ekran mali */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Blaga senka */
+}
+
+.payment-logo {
+    height: 40px; /* Postavi visinu na 40px (uvećano, a proporcionalno) */
+    margin: 0 15px; /* Razmak između logotipa */
+    object-fit: contain; /* Osigurava da se slika uklopi bez sečenja */
+}
+
+/* Specifično za PayU logo ako ima drugačije proporcije */
+.payment-logo.payu-logo {
+    height: 35px; /* Malo manja visina za PayU ako je potrebno */
+    /* Možete prilagoditi ovo ako PayU logo izgleda neproporcionalno sa 40px visine */
+}
+.social-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    filter: invert(0); /* ako želiš bijele ikone, stavi na invert(1) */
+    cursor: pointer;
+}
+/* SCROLL POPRAVKE */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0 !important;
+}
+
+body {
+    scroll-margin-top: 0;
+}
+
+/* SCROLL TOP DUGME */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    background-color: #c2fabe;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+#scrollTopBtn:hover {
+    background-color: #86b382;
+    transform: scale(1.1);
+}
