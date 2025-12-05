@@ -1,0 +1,14 @@
+/* style.css */
+
+.header-container {
+    /* Stilovi za smanjeni heder i border */
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 3px solid #000;
+}
+
+.header-container img {
+    /* Stilovi za logo (poravnat levo) */
+    width: auto;
+    max-height: 70px;
+}
