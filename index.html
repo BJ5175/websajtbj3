@@ -1,27 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+
     <title>Boris Josipović</title>
 </head>
+
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="container"> 
-            <div class="row">
-                <div class="col-sm-12">
-                    <img src="logoheader.png" alt="Logo" class="img-responsive" />
+    <header>
+        <div class="header-container">
+            <div class="container-fluid"> 
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img src="logoheader.png" alt="Logo" class="img-responsive" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
+    <main class="container main-content">
+        <h2>Dobrodošli na Stranicu!</h2>
+        <p>Ovaj prostor je namenjen za glavni sadržaj Vaše web stranice.</p>
+        <div style="height: 300px; background-color: #f4f4f4; border: 1px dashed #ccc; margin-top: 20px; padding: 15px;">
+            Ovo je mesto gde će ići Vaše vesti, blog postovi, ili proizvodi.
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+             <div class="container-fluid"> 
+                <div class="row">
+                    
+                    <div class="col-sm-3 footer-col">
+                        <h4>Reklamni Prostor</h4>
+                        <p>Dragi korisnici moje web stranice, želite li reklamu na mojoj stranici? Kliknite na dugme ispod i uđite u audiciju!</p>
+                        <button type="button" class="btn btn-primary">Prijavi se</button>
+                    </div>
+
+                    <div class="col-sm-3 footer-col">
+                        <h4>Kontakt</h4>
+                        <p>📧 Email: sigmastic112@gmail.com</p>
+                        <p>📞 Telefon: +385 91 234 5678</p>
+                        <p>📍 Adresa: Ulica Primjera 123, Sarajevo, Bosna i Hercegovina</p>
+                    </div>
+
+                    <div class="col-sm-3 footer-col">
+                        <h4>Lokacija</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21887.29178765096!2d18.316690724251814!3d43.82828032961695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c9968d61d165%3A0x122303aa14730db0!2sDobrinja%20IV%2C%2071000%20Sarajevo!5e1!3m2!1shr!2sba!4v1764962472726!5m2!1shr!2sba" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="col-sm-3 footer-col">
+                        <h4>Kontaktirajte nas</h4>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Vaš email" required />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Vaša poruka" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Pošalji</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12 text-center copyright">
+                        <p>© 2025 Boris Josipović. Sva prava zadržana.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
