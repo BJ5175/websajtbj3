@@ -14,14 +14,18 @@ body {
 .header-container {
     /* Svetla pozadina i tanak plavi border */
     background-color: #fff; 
-    padding: 10px 0;
+    padding: 15px 0; /* Povećan padding */
     border-bottom: 2px solid #007bff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Suptilna senka */
 }
 
 .header-container img {
+    /* img-fluid klasa u HTML-u osigurava responzivnost, 
+       ovde se postavlja samo max-height */
     width: auto;
-    max-height: 70px;
+    max-height: 80px; 
+    display: block; /* Važno za centriranje ili unutar flex kontejnera */
+    margin: 0 auto; /* Centriranje slike */
 }
 
 /* =========================== */
@@ -31,7 +35,7 @@ body {
     /* Duboka antracit siva pozadina za elegantan izgled */
     background-color: #212529; 
     color: #f8f9fa; /* Svetliji tekst */
-    padding: 40px 0; /* Veći vertikalni razmak */
+    padding: 50px 0 20px 0; /* Više paddinga na vrhu, manje na dnu */
     line-height: 1.6; /* Bolja čitljivost teksta */
 }
 
@@ -44,20 +48,24 @@ body {
     padding-bottom: 5px;
 }
 
-/* Stil za kontakt informacije (emojiji) */
-.footer-col p {
-    margin-bottom: 8px;
-    opacity: 0.9;
-}
-
 /* Stil za forme i polja */
 .footer-container .form-control {
     background-color: #343a40; /* Tamnija pozadina polja */
     border: 1px solid #495057;
     color: #fff; /* Beli tekst u polju */
-    /* Stil za placeholder text */
-    -webkit-text-fill-color: #ccc;
 }
+/* Stil za placeholder text (moraju ići posebno za bolju kompatibilnost) */
+.footer-container .form-control::placeholder {
+    color: #ccc;
+    opacity: 1; /* Za Firefox */
+}
+.footer-container .form-control:-ms-input-placeholder {
+    color: #ccc;
+}
+.footer-container .form-control::-ms-input-placeholder {
+    color: #ccc;
+}
+
 
 /* Stil za dugmad (Prijavi se i Pošalji) - Obe su Primary */
 .footer-container .btn-primary {
@@ -65,6 +73,9 @@ body {
     border-color: #007bff;
     color: #fff; 
     transition: background-color 0.3s, transform 0.2s;
+    /* Daje dugmetu u footeru punu širinu roditeljskog elementa za bolji izgled */
+    width: 100%; 
+    max-width: 250px; /* Ograničenje širine za veće ekrane */
 }
 
 .footer-container .btn-primary:hover {
@@ -85,10 +96,19 @@ body {
     margin-bottom: 0;
 }
 
-/* Stilovi za responsivnu mapu */
-.embed-responsive-1by1 {
-    padding-bottom: 100%;
+/* Stilovi za responzivnu mapu
+   Bootstrap 5 koristi 'ratio' helper klase. 
+   Ove klase zamjenjuju stari 'embed-responsive' */
+.map-responsive iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
 }
-.embed-responsive-item {
-    border-radius: 4px; 
+
+/* Dodatna prilagođavanja za navigaciju (opciono) */
+#mainNavbar {
+    /* Fiksna navigacija za bolju upotrebljivost */
+    position: sticky;
+    top: 0;
+    z-index: 1020; /* Veći z-index da prekrije ostale elemente */
 }
