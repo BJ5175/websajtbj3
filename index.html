@@ -3,62 +3,57 @@
 
 <head>
     <title>BJ</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RMRx5joZ+T+rO0A+f/9qFGsHqLz4l+O7XgLwX/Z" crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BINGE0Jj9g5lYVj3uKj+z8mQ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
-    <header>
+    <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="logoheader.png" class="img-responsive" alt="Logo" style="width: 100px;">
+                    <img src="logoheader.png" class="img-responsive header_logo" alt="Logo">
                 </div>
             </div>
         </div>
     </header>
 
-    <nav class="navbar navbar-default text-center">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand text-center" href="#">BJ</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav text-center">
-                    <li class="button"><a href="#">Početna</a></li>
-                    <li class="button"><a href="#">Proizvodi</a></li>
-                    <li class="button"><a href="#">O nama</a></li>
-                    <li class="button"><a href="#">Kontakt</a></li>
-                    <li class="button"><a href="#">Karijera</a></li>
-
-
-                </ul>
-
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Search</button>
-                </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">BJ
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="index.html">Početna <span
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Proizvodi</a>
+                    <a class="nav-item nav-link" href="#">O nama</a>
+                    <a class="nav-item nav-link" href="#">Kontakt</a>
+                    <a class="nav-item nav-link" href="#">Karijera</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
+
 </html>

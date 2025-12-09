@@ -1,0 +1,16 @@
+.header_logo {
+    width: 100px; 
+    height: auto;
+}
+.header{
+    background-color: #FFFF;
+    padding: 10px 0;
+    border: none; 
+    border-bottom: 2px solid #ff8c00; 
+    border-radius: 0;
+}
+.navbar-nav .nav-link {
+    color: #333; 
+    font-weight: 500; 
+    margin-right: 15px; 
+}
