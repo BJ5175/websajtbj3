@@ -42,7 +42,7 @@ body {
 }
 
 .header-container img {
-    width: 85px !important;
+    width: 90% !important;
     height: auto !important;
     position: absolute;
     left: 300px;
@@ -414,7 +414,7 @@ body {
 
 /* Postavlja visinu navigacione trake i osigurava vertikalno centriranje elemenata */
 .navbar {
-    min-height: 80px; 
+    min-height: 50px; 
     align-items: center; 
 }
 
