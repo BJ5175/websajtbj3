@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     updateArrowVisibility(); // Inicijalno postavljanje
 });
-<script>
 function updateClock() {
     const now = new Date();
 
@@ -103,4 +102,3 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock();
-</script>
