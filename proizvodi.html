@@ -60,11 +60,13 @@
                         <a href="#">Početna</a>
                         <a href="#">Proizvodi</a>
                         <a href="#">O nama</a>
+                        <a href="#">Kontakt</a>
+                        <a onclick="location.reload()">Reload</a>
                     </div>
-                    <div class="search-container">
-                        <input type="text" placeholder="Pretraživanje...">
-                        <button>Pretraži</button>
-                    </div>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Pretraživanje" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Pretraži</button>
+                    </form>
                 </div>
             </nav>
 
@@ -89,10 +91,25 @@
                             <li><a class="dropdown-item tablinks" href="javascript:void(0)"
                                     onclick="openCity(event, 'KucniUredjaji')"><i class="bi bi-house"></i> Kućni
                                     uređaji</a></li>
+                            <div class="dropdown-divider"></div>
+                            <li>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="sortirajProizvode('asc')">
+                                    <i class="bi bi-sort-numeric-down"></i> Cijena: Manja ka većoj ↑
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="sortirajProizvode('desc')">
+                                    <i class="bi bi-sort-numeric-up"></i> Cijena: Veća ka manjoj ↓
+                                </a>
+                            </li>
+
                         </ul>
+
                     </div>
                 </div>
+
             </div>
+
 
             <div class="container mt-5">
                 <div id="Laptopi" class="tabcontent" style="display:none;">
@@ -116,7 +133,8 @@
                                 </div>
 
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item fw-bold" style="color: red;">799,00 KM</li>
+                                    <li class="list-group-item fw-bold item-price" data-price="799.00"
+                                        style="color: red;">799,00 KM</li>
                                 </ul>
 
                                 <div class="card-body">
@@ -139,7 +157,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1.999,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1999.00" style="color: red;">
+                                        1.999,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -161,7 +180,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1.099,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1099.00" style="color: red;">
+                                        1.099,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -183,7 +203,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">3.699,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="3699.00" style="color: red;">
+                                        3.699,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -208,7 +229,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1.649,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1649.00" style="color: red;">
+                                        1.649,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -230,7 +252,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1.529,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1529.00" style="color: red;">
+                                        1.529,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -252,7 +275,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1.589,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1589.00" style="color: red;">
+                                        1.589,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -274,7 +298,8 @@
                                         Operativni sistem: Windows 11...</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1.529,00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1529.00" style="color: red;">
+                                        1.529,00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu 🛒</button>
@@ -303,7 +328,8 @@
                                         Kupujte na rate na OS.com web shopu</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">530.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="530.00" style="color: red;">
+                                        530.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -328,7 +354,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">920.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="920.00" style="color: red;">
+                                        920.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -352,7 +379,8 @@
                                         Kupujte na rate na OS.com web shopu</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">995.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="995.00" style="color: red;">
+                                        995.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -376,7 +404,8 @@
                                         Kupujte na rate na OS.com web shopu</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">995.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="995.00" style="color: red;">
+                                        995.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -402,7 +431,8 @@
                                         Kupujte na rate na OS.com web shopu</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">530.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="530.00" style="color: red;">
+                                        530.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -427,7 +457,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">920.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="920.00" style="color: red;">
+                                        920.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -451,7 +482,8 @@
                                         Kupujte na rate na OS.com web shopu</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">995.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="995.00" style="color: red;">
+                                        995.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -475,7 +507,8 @@
                                         Kupujte na rate na OS.com web shopu</p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">1350.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="1350.00" style="color: red;">
+                                        1350.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -506,7 +539,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">150.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="150.00" style="color: red;">
+                                        150.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -533,7 +567,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">250.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="250.00" style="color: red;">
+                                        250.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -561,7 +596,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">635.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="635.00" style="color: red;">
+                                        635.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -587,7 +623,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">29.99 KM</li>
+                                    <li class="list-group-item item-price" data-price="29.99" style="color: red;">29.99
+                                        KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -613,7 +650,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">45.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="45.00" style="color: red;">45.00
+                                        KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -639,7 +677,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">39.99 KM</li>
+                                    <li class="list-group-item item-price" data-price="39.99" style="color: red;">39.99
+                                        KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -665,7 +704,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">455.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="455.00" style="color: red;">
+                                        455.00 KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -692,7 +732,8 @@
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item" style="color: red;">52.00 KM</li>
+                                    <li class="list-group-item item-price" data-price="52.00" style="color: red;">52.00
+                                        KM</li>
                                 </ul>
                                 <div class="card-body">
                                     <button type="button" class="btn custom-orange">Dodaj u korpu
@@ -857,6 +898,6 @@
             </div>
         </div>
 </body>
-<script src="kategorije.js"></script>
+<script src="kategorije i filteri.js"></script>
 
 </html>

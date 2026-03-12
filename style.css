@@ -60,7 +60,7 @@ body {
 /* =============================== */
 
 .navbar {
-    background-color: #ff8800 !important;
+    background-color: #4dcfff !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-height: 70px;
     /* Povećava visinu navbar-a */
@@ -89,7 +89,7 @@ body {
 
 .navbar .btn-outline-success:hover {
     background-color: #fff;
-    color: #ff8800;
+    color: #4dcfff;
 }
 
 /* =============================== */
@@ -97,7 +97,7 @@ body {
 /* =============================== */
 
 .footer {
-    background-color: #ff8800;
+    background-color: #4dcfff;
     color: #fff;
     border-top: 0px solid #000;
     margin-top: auto;
@@ -126,7 +126,7 @@ body {
 /* Dugme "PRIJAVA" */
 .footer .btn-success {
     background-color: #fff;
-    color: #ff8800;
+    color: #4dcfff;
     border: none;
     border-radius: 8px;
     font-weight: 600;
@@ -136,7 +136,7 @@ body {
 }
 
 .footer .btn-success:hover {
-    background-color: #ff8800;
+    background-color: #4dcfff;
     color: #fff;
     transform: scale(1.05);
 }
@@ -144,7 +144,7 @@ body {
 /* Dugme "POŠALJI" */
 .footer .btn-primary {
     background-color: #fff;
-    color: #ff8800;
+    color: #4dcfff;
     border: none;
     font-weight: 600;
     border-radius: 8px;
@@ -153,7 +153,7 @@ body {
 }
 
 .footer .btn-primary:hover {
-    background-color: #ff8800;
+    background-color: #4dcfff;
     color: #fff;
     transform: scale(1.05);
 }
@@ -188,13 +188,13 @@ body {
 
 
 .custom-orange {
-    background-color: #ff6600;
+    background-color: #4dcfff;
     color: white;
     border: none;
 }
 
 .custom-orange:hover {
-    background-color: #e65c00;
+    background-color: #4dcfff;
 }
 
 #scrollTopBtn {
@@ -212,7 +212,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     color: white;
-    background-color: #ff8800;
+    background-color: #4dcfff;
 }
 
 body {
@@ -271,13 +271,13 @@ body {
 }
 
 .newsletter-form input:focus {
-    border-color: #ff6600;
+    border-color: #4dcfff;
     box-shadow: 0 0 5px rgba(255, 102, 0, 0.4);
 }
 
 /* dugme */
 .newsletter-form button {
-    background-color: #ff6600;
+    background-color: #4dcfff;
     color: white;
     font-size: 18px;
     padding: 15px 0;
@@ -288,7 +288,7 @@ body {
 }
 
 .newsletter-form button:hover {
-    background-color: #e65c00;
+    background-color: #4dcfff;
     transform: scale(1.02);
 }
 
@@ -373,7 +373,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid #4dcfff;
     border-radius: 50%;
     width: 45px;
     /* Malo veće strelice */
@@ -409,7 +409,7 @@ body {
 
 /* Glavni Header */
 .custom-header {
-    background-color: #ff8c00;
+    background-color: #4dcfff;
     /* Tvoja narandžasta */
     padding: 12px 24px;
     color: white;
@@ -453,7 +453,7 @@ body {
 
 /* Navbar - tvoja narandžasta */
 .custom-navbar {
-    background-color: #FF8C00;
+    background-color: #4dcfff;
     padding: 15px 0;
     color: white;
 }
@@ -496,9 +496,9 @@ body {
 }
 
 .btn-profile-modern:hover {
-    background-color: #FF8C00;
+    background-color: #4dcfff;
     color: white;
-    border-color: #FF8C00;
+    border-color: #4dcfff;
 }
 
 /* Dropdown Menu */
@@ -518,7 +518,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #FF8C00;
+    background-color: #4dcfff;
     /* Tvoja narandžasta */
     color: white !important;
     /* Bijeli tekst */
@@ -529,14 +529,14 @@ body {
 
 /* Hover efekat - malo tamnija narandžasta kad se pređe mišem */
 .dropdown-item:hover {
-    background-color: #e67e00;
+    background-color: #4dcfff;
     color: white !important;
 }
 
 /* Stanje kada je kategorija AKTIVNA (kliknuta) */
 /* Dodajemo .active jer tu klasu tvoj JS dodaje na klik */
 .dropdown-item.active {
-    background-color: #FF8C00 !important;
+    background-color: #4dcfff !important;
     color: white !important;
     font-weight: bold;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -545,7 +545,7 @@ body {
 
 /* Uklanjamo Bootstrapov podrazumijevani plavi focus/active */
 .dropdown-item:active {
-    background-color: #FF8C00;
+    background-color: #4dcfff !important;
 }
 
 /* Animacija */
@@ -567,7 +567,7 @@ body {
 
 /* Stil za narandžasti brend/logo u belom delu */
 .text-orange-brand {
-    color: #ff8c00;
+    color: #4dcfff;
 }
 
 /* Osigurava da su tekstovi linkova malo veći i bez podvlačenja */
@@ -606,7 +606,7 @@ body {
 
 /* 1. Glavni omotač (Narančasta pozadina) */
 .main-wrapper {
-    background-color: #ff8c00;
+    background-color: #4dcfff;
     /* Narančasta boja iz primjera */
     padding: 30px 0;
     /* Vertikalni padding za visinu sekcije */
@@ -658,7 +658,7 @@ body {
 
 /* 1. Glavni kontejner (Tamna pozadina) */
 .copyright-section {
-    background-color: #ff8c00;
+    background-color: #4dcfff;
     /* Tamna boja pozadine */
     color: #ffffff;
     /* Bijela boja teksta */
@@ -696,7 +696,7 @@ body {
 
 /* 4. Stiliziranje linka "Univerzalno.com" */
 .website-link {
-    color: #3f90ff;
+    color: #4dcfff;
     /* Plava boja linka */
     text-decoration: none;
     transition: color 0.2s;
@@ -708,7 +708,7 @@ body {
 
 /* 5. Stiliziranje linka "Univerzalno.com" u footeru */
 .footer .website-link {
-    color: #3f90ff;
+    color: #ffffff;
     /* Plava boja linka */
     text-decoration: none;
     transition: color 0.2s;
