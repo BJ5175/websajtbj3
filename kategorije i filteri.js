@@ -1,75 +1,110 @@
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
+/**
+ * **KOMPLETAN SISTEM - FILTER + SORT + SLIDER + TABOVI + SPASI DUGME**
+ * Sve od maloprije u jednom fajlu
+ */
 
-    tabcontent = document.getElementsByClassName("tabcontent");
+function osvjeziSveFiltere(sortBy = null, sortDir = 'asc') {
+    const slider = document.getElementById('range4');
+    const maxCijena = slider ? parseFloat(slider.value) : 4000;
+    const checkedBrands = Array.from(document.querySelectorAll('.form-check-input:checked'))
+        .map(cb => cb.id.toLowerCase());
 
-    if (cityName === 'Sve') {
-        // Prikaži SVE sekcije
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "block";
-        }
-    } else {
-        // Sakrij sve i prikaži samo odabranu
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        var selectedTab = document.getElementById(cityName);
-        if (selectedTab) {
-            selectedTab.style.display = "block";
-            console.log("Prikazana kategorija: " + cityName);
-        }
-    }
+    // SVI proizvodi na stranici
+    const proizvodi = document.querySelectorAll('.col-sm-3[data-brand], .product-item[data-brand]');
 
-    // Upravljanje aktivnom klasom na dugmićima
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-    }
+    proizvodi.forEach(proizvod => {
+        proizvod.style.display = '';
 
-    if (evt) {
-        evt.currentTarget.classList.add("active");
-    }
-}
+        const priceElem = proizvod.querySelector('.item-price');
+        const cijena = priceElem ? parseFloat(priceElem.getAttribute('data-price')) : 0;
+        const brend = proizvod.getAttribute('data-brand')?.toLowerCase() || '';
 
-// OVO JE KLJUČNI DIO: Pokreće "Sve" čim se stranica učita
-window.onload = function () {
-    openCity(null, 'Sve');
-    console.log("Stranica sve učitana.");
-};
+        const passPrice = cijena <= maxCijena;
+        const passBrand = checkedBrands.length === 0 || checkedBrands.includes(brend);
 
-function sortirajProizvode(order) {
-    // 1. Pronađi sve kolone koje sadrže kartice (.col-sm-3)
-    let proizvodi = Array.from(document.querySelectorAll(".tabcontent .col-sm-3"));
-
-    // 2. Sortiraj ih matematički
-    proizvodi.sort((a, b) => {
-        // Uzmi vrijednost iz data-price atributa
-        let priceElemA = a.querySelector(".item-price");
-        let priceElemB = b.querySelector(".item-price");
-
-        // Ako nema elementa, postavi cijenu na 0
-        let cijenaA = priceElemA ? Number(priceElemA.getAttribute("data-price")) : 0;
-        let cijenaB = priceElemB ? Number(priceElemB.getAttribute("data-price")) : 0;
-
-        if (order === 'asc') {
-            return cijenaA - cijenaB; // Od 799 do 1590
-        } else {
-            return cijenaB - cijenaA; // Od 1590 do 799
+        if (!passPrice || !passBrand) {
+            proizvod.style.display = 'none';
         }
     });
 
-    // 3. Isprazni trenutne redove i prikaži sve sortirano u prvom tabu
-    let sviTabovi = document.querySelectorAll(".tabcontent");
-    let glavniTab = sviTabovi[0];
-    let glavniRow = glavniTab.querySelector(".row");
-
-    // Sakrij sve tabove
-    sviTabovi.forEach(tab => tab.style.display = "none");
-
-    // Očisti glavni red i ubaci sortirane proizvode
-    glavniRow.innerHTML = "";
-    proizvodi.forEach(p => glavniRow.appendChild(p));
-
-    // Prikaži taj tab sa svim proizvodima
-    glavniTab.style.display = "block";
+    // Sortiranje
+    if (sortBy) {
+        const visible = Array.from(document.querySelectorAll('.col-sm-3[data-brand]:not([style*="none"]), .product-item[data-brand]:not([style*="none"])'));
+        const container = visible[0]?.parentNode;
+        if (container) {
+            visible.sort((a, b) => {
+                if (sortBy === 'brand') {
+                    const brandA = a.getAttribute('data-brand')?.toLowerCase() || '';
+                    const brandB = b.getAttribute('data-brand')?.toLowerCase() || '';
+                    return sortDir === 'asc' ? brandA.localeCompare(brandB) : brandB.localeCompare(brandA);
+                } else {
+                    const priceA = parseFloat(a.querySelector('.item-price')?.getAttribute('data-price')) || 0;
+                    const priceB = parseFloat(b.querySelector('.item-price')?.getAttribute('data-price')) || 0;
+                    return sortDir === 'asc' ? priceA - priceB : priceB - priceA;
+                }
+            });
+            visible.forEach(item => container.appendChild(item));
+        }
+    }
 }
+
+function openCity(evt, cityName) {
+    const tabcontent = document.getElementsByClassName('tabcontent');
+    const tablinks = document.getElementsByClassName('tablinks');
+
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = cityName === 'Sve' ? 'block' : 'none';
+    }
+    if (cityName !== 'Sve') {
+        document.getElementById(cityName).style.display = 'block';
+    }
+
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove('active');
+    }
+    evt?.currentTarget.classList.add('active');
+
+    osvjeziSveFiltere();
+}
+
+function sortirajProizvode(by, direction) {
+    osvjeziSveFiltere(by, direction);
+}
+
+// INIT
+document.addEventListener('DOMContentLoaded', function () {
+    // Spasi dugme
+    document.getElementById('spasiBtn')?.addEventListener('click', () => osvjeziSveFiltere());
+
+    // Slider
+    const slider = document.getElementById('range4');
+    const numInput = document.getElementById('numInput');
+    if (slider && numInput) {
+        slider.addEventListener('input', () => {
+            numInput.value = slider.value;
+            osvjeziSveFiltere();
+        });
+        numInput.addEventListener('input', () => {
+            slider.value = numInput.value;
+            osvjeziSveFiltere();
+        });
+    }
+
+    // Checkbox filter
+    document.addEventListener('change', (e) => {
+        if (e.target.matches('.form-check-input')) {
+            osvjeziSveFiltere();
+        }
+    });
+
+    // Dropdown ne zatvaraj
+    document.querySelector('.dropdown-menu')?.addEventListener('click', (e) => e.stopPropagation());
+
+    // POCETNO STANJE: SVI VIDLJIVI
+    document.querySelectorAll('.col-sm-3[data-brand], .product-item[data-brand]').forEach(p => {
+        p.style.display = '';
+    });
+
+    // Aktiviraj prvi tab
+    setTimeout(() => openCity(null, 'Laptopi'), 100); // promijeni 'Laptopi'
+});

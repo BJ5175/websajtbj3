@@ -745,3 +745,23 @@ body {
 .d-none {
     display: none !important;
 }
+
+/* Postavljanje širine za dva stupca */
+.dropdown-menu-columns {
+    min-width: 400px;
+    /* Prilagodi po želji */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Osigurava da checkbox i tekst budu u istoj liniji i imaju padding */
+.dropdown-menu-columns .form-check {
+    padding-left: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.dropdown-menu-columns .dropdown-header {
+    font-weight: bold;
+    color: #0d6efd;
+    padding-left: 1rem;
+}

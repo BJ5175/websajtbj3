@@ -63,58 +63,152 @@
                         <a href="kontakt.html">Kontakt</a>
                         <a onclick="location.reload()">Reload</a>
                     </div>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pretraživanje" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Pretraži</button>
-                    </form>
+                    <div class="d-flex">
+                        <input id="search-input" class="form-control me-2" type="search" placeholder="Pretraživanje"
+                            aria-label="Search">
+                        <button id="search-btn" class="btn btn-outline-success" type="button">Pretraži</button>
+                    </div>
                 </div>
             </nav>
 
             <div class="action-bar">
-                <div class="container">
-                    <div class="dropdown">
-                        <button class="btn-profile-modern dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="bi bi-person-circle me-2"></i> Sve kategorije
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item tablinks" href="javascript:void(0)"
-                                    onclick="openCity(event, 'Sve')">
-                                    <i class="bi bi-house"></i> Sve kategorije
-                                </a>
-                            </li>
-                            <li><a class="dropdown-item tablinks" href="javascript:void(0)"
-                                    onclick="openCity(event, 'Laptopi')"><i class="bi bi-laptop"></i> Laptopi</a></li>
-                            <li><a class="dropdown-item tablinks" href="javascript:void(0)"
-                                    onclick="openCity(event, 'Telefoni')"><i class="bi bi-phone"></i> Telefoni</a></li>
-                            <li><a class="dropdown-item tablinks" href="javascript:void(0)"
-                                    onclick="openCity(event, 'KucniUredjaji')"><i class="bi bi-house"></i> Kućni
-                                    uređaji</a></li>
-                            <div class="dropdown-divider"></div>
-                            <li>
-                                <a class="dropdown-item" href="javascript:void(0)" onclick="sortirajProizvode('asc')">
-                                    <i class="bi bi-sort-numeric-down"></i> Cijena: Manja ka većoj ↑
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="javascript:void(0)" onclick="sortirajProizvode('desc')">
-                                    <i class="bi bi-sort-numeric-up"></i> Cijena: Veća ka manjoj ↓
-                                </a>
-                            </li>
+                <div class="container mt-3">
+                    <div class="row d-flex align-items-center gap-4">
 
-                        </ul>
+                        <div class="col-auto">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle me-2"></i> Sve kategorije
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item tablinks" href="javascript:void(0)"
+                                            onclick="openCity(event, 'Sve')"><i class="bi bi-house"></i> Sve
+                                            kategorije</a></li>
+                                    <li><a class="dropdown-item tablinks" href="javascript:void(0)"
+                                            onclick="openCity(event, 'Laptopi')"><i class="bi bi-laptop"></i>
+                                            Laptopi</a></li>
+                                    <li><a class="dropdown-item tablinks" href="javascript:void(0)"
+                                            onclick="openCity(event, 'Telefoni')"><i class="bi bi-phone"></i>
+                                            Telefoni</a></li>
+                                    <li><a class="dropdown-item tablinks" href="javascript:void(0)"
+                                            onclick="openCity(event, 'KucniUredjaji')"><i class="bi bi-house"></i> Kućni
+                                            uređaji</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a class="dropdown-item" href="#" onclick="sortirajProizvode('asc')"><i
+                                                class="bi bi-sort-numeric-down"></i> Cijena: Manja ka većoj ↑</a></li>
+                                    <li><a class="dropdown-item" href="#" onclick="sortirajProizvode('desc')"><i
+                                                class="bi bi-sort-numeric-up"></i> Cijena: Veća ka manjoj ↓</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
+                        <div class="col-auto" style="min-width: 350px;">
+                            <div class="d-flex align-items-center gap-3">
+                                <label for="range4" class="form-label mb-0" style="white-space: nowrap;">Cijena
+                                    do:</label>
+
+                                <input type="range" class="form-range" min="1" max="4000" value="4000" id="range4"
+                                    style="width: 150px;">
+
+                                <div class="d-flex align-items-center">
+                                    <input type="number" id="numInput" min="1" max="4000" value="4000"
+                                        class="form-control form-control-sm" style="width: 85px;">
+                                    <span class="ms-2 fw-bold">KM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="dropdown dropdown-center">
+                                <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle me-2"></i> Sve firme
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-columns p-3">
+                                    <div class="row g-0">
+                                        <div class="col-6">
+                                            <p class="dropdown-header">Laptopi</p>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="asus"><label class="form-check-label"
+                                                        for="checkAsus">Asus</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="lenovo"><label class="form-check-label"
+                                                        for="checkLenovo">Lenovo</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="dell"><label class="form-check-label"
+                                                        for="checkDell">Dell</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="hp"><label class="form-check-label" for="checkHP">HP</label>
+                                                </div>
+                                            </li>
+
+                                            <div class="dropdown-divider"></div>
+                                            <p class="dropdown-header">Telefoni</p>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="samsung"><label class="form-check-label"
+                                                        for="checkSamsung">Samsung</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="apple"><label class="form-check-label"
+                                                        for="checkApple">Apple</label></div>
+                                            </li>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <p class="dropdown-header">Kućni uređaji</p>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="arieta"><label class="form-check-label"
+                                                        for="checkArieta">Arieta</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="xiaomi"><label class="form-check-label"
+                                                        for="checkXiaomi">Xiaomi</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="gorenje"><label class="form-check-label"
+                                                        for="checkGorenje">Gorenje</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="brock"><label class="form-check-label"
+                                                        for="checkBrock">Brock</label></div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox"
+                                                        id="vivax"><label class="form-check-label"
+                                                        for="checkVivax">Vivax</label></div>
+                                            </li>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" onclick="osvjeziSveFiltere()">
+                                        <i class="bi bi-arrow-clockwise"></i> Spasi filtere
+                                    </button>
+
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
 
 
             <div class="container mt-5">
                 <div id="Laptopi" class="tabcontent" style="display:none;">
                     <div class="row" id="Laptopi">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="lenovo">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -134,7 +228,8 @@
 
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item fw-bold item-price" data-price="799.00"
-                                        style="color: red;">799,00 KM</li>
+                                        style="color: red;">
+                                        799,00 KM</li>
                                 </ul>
 
                                 <div class="card-body">
@@ -142,7 +237,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="asus">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -165,7 +260,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="asus">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -188,7 +284,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="dell">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -214,7 +311,8 @@
                     </div>
 
                     <div class="row mt-3" id="Laptopi">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="asus">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -237,7 +335,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="hp">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -260,7 +359,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="hp">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -283,7 +383,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="hp">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-danger p-2" style="border-radius: 0; width: 100%;">LAPTOP</div>
 
@@ -312,7 +412,8 @@
 
                 <div id="Telefoni" class="tabcontent" style="display:none;">
                     <div class="row mt-3" id="telefoni">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="samsung">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -337,7 +438,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="apple">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -363,7 +464,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="apple">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -388,7 +489,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="apple">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -415,7 +516,7 @@
                         </div>
                     </div>
                     <div class="row mt-3" id="telefoni">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="samsung">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -440,7 +541,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="apple">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -466,7 +568,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="apple">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -491,7 +594,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="samsung">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-primary p-2" style="border-radius: 0; width: 100%;">
                                     TELEFONI
@@ -522,7 +626,8 @@
 
                 <div id="KucniUredjaji" class="tabcontent" style="display:none;">
                     <div class="row mt-3" id="kucni_uredjaji">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="arieta">
+
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -548,7 +653,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="xiaomi">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -576,7 +681,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="gorenje">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -605,7 +710,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="brock">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -634,7 +739,7 @@
                         </div>
                     </div>
                     <div class="row mt-3" id="kucni_uredjaji">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="brock">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -659,7 +764,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="brock">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -686,7 +791,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="vivax">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -713,7 +818,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 product-item" data-brand="xiaomi">
                             <div class="card" style="width: 18rem; overflow: hidden;">
                                 <div class="badge bg-success p-2" style="border-radius: 0; width: 100%;">
                                     KUĆNI
@@ -900,5 +1005,6 @@
 </body>
 <script src="../kategorije i filteri.js"></script>
 <script src="../script.js"></script>
+<script src="pretraživanje.js"></script>
 
 </html>
