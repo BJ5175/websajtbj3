@@ -765,3 +765,60 @@ body {
     color: #0d6efd;
     padding-left: 1rem;
 }
+
+/* Stil za o nama  */
+/* Glavni kontejner sa efektom stakla */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Stil za sliku */
+.profil-slika {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Krug je moderniji za profilne slike */
+    border: 4px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.profil-slika:hover {
+    transform: scale(1.08) rotate(3deg);
+}
+
+/* Dekorativna linija ispod naslova */
+.divider {
+    width: 60px;
+    height: 4px;
+    background: #007bff;
+    /* Možeš staviti boju svog brenda */
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* Tekstualni stil */
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    /* Ili svjetlije ako je tamna tema */
+    text-align: justify;
+}
+
+/* Responzivno prilagođavanje za mobitel */
+@media (max-width: 576px) {
+    .divider {
+        margin: 10px auto 20px;
+    }
+
+    .profil-slika {
+        margin-top: 20px;
+    }
+}

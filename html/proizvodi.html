@@ -53,20 +53,31 @@
             </div>
 
             <!-- NAVBAR -->
-            <nav class="navbar custom-navbar">
-                <div class="container d-flex justify-content-between">
-                    <div class="nav-links">
-                        <span class="brand">BJ</span>
-                        <a href="../index.html">Početna</a>
-                        <a href="proizvodi.html">Proizvodi</a>
-                        <a href="o-nama.html">O nama</a>
-                        <a href="kontakt.html">Kontakt</a>
-                        <a onclick="location.reload()">Reload</a>
-                    </div>
-                    <div class="d-flex">
-                        <input id="search-input" class="form-control me-2" type="search" placeholder="Pretraživanje"
-                            aria-label="Search">
-                        <button id="search-btn" class="btn btn-outline-success" type="button">Pretraži</button>
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <div class="container">
+                    <a class="navbar-brand" href="#">BJ</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item active"><a class="nav-link" href="../index.html">Početna</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/html/proizvodi.html">Proizvodi</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="o_nama.html">O nama</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="/novosti.html">Novosti</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="/omeni.html">Karijera</a></li>
+                            <li class="nav-item active"><a class="nav-link" onclick="reloadPage()">Reload</a></li>
+                            </ul>
+
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Pretraživanje"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Pretraži</button>
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -1005,6 +1016,6 @@
 </body>
 <script src="../kategorije i filteri.js"></script>
 <script src="../script.js"></script>
-<script src="pretraživanje.js"></script>
+<script src="../pretraživanje.js"></script>
 
 </html>

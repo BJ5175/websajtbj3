@@ -85,21 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateArrowVisibility(); // Inicijalno postavljanje
 });
-function updateClock() {
-    const now = new Date();
 
-    const date = now.toLocaleDateString('hr-HR', {
-        weekday: 'short',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-
-    const time = now.toLocaleTimeString('hr-HR');
-
-    document.getElementById("clock").innerHTML = date + " | " + time;
-}
-
-setInterval(updateClock, 1000);
-updateClock();
 
