@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Login</title>
+    <link rel="stylesheet" href="../login.css">
+</head>
+
+<body>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <div class="login-card">
+        <h2>Dobrodošli</h2>
+        <p class="subtitle">Unesite podatke za pristup</p>
+
+        <form id="authForm">
+            <div class="input-group">
+                <label for="username">Korisničko ime</label>
+                <input type="text" id="username" placeholder="Korisničko ime" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Lozinka</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="button" id="loginAction" class="btn login-btn">Uloguj se</button>
+            <a href="register.html" class="btn register-btn" style="text-decoration: none; display: block;">
+                Registruj se
+            </a>
+            <a href="register.html" class="forgot-link">Zaboravili ste lozinku?</a>
+            <p id="status-msg"></p>
+        </form>
+    </div>
+    <script src="../login.js"></script>
+</body>
+
+</html>

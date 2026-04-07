@@ -822,3 +822,25 @@ body {
         margin-top: 20px;
     }
 }
+
+.btn-prijava {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #28a745;
+    text-decoration: none;
+    border: 2px solid #28a745;
+    border-radius: 50px;
+    /* Zaobljeni rubovi */
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-prijava:hover {
+    background-color: #28a745;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    transform: translateY(-2px);
+    /* Lagani skok prema gore */
+}
