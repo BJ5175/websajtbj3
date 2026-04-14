@@ -1,73 +1,48 @@
-const userInp = document.getElementById('username');
-const passInp = document.getElementById('password');
-const loginBtn = document.getElementById('loginAction');
-const regRedirectBtn = document.getElementById('registerAction');
+// Selektovanje elemenata
+const registerBtn = document.getElementById('registerBtn');
 const msg = document.getElementById('status-msg');
 
-// --- DODAVANJE ADMIN NALOGA ---
-// Proveravamo da li admin već postoji, ako ne, kreiramo ga u formatu koji tvoj sistem očekuje
-if (!localStorage.getItem('admin')) {
-    const adminData = {
-        firstName: "Administrator",
-        lastName: "Sistema",
-        birthDate: "1990-01-01",
-        password: "admin123"
-    };
-    localStorage.setItem('admin', JSON.stringify(adminData));
-    console.log("Admin nalog je uspešno kreiran u pozadini.");
-}
+if (registerBtn) {
+    registerBtn.addEventListener('click', () => {
+        // Hvatanje vrednosti iz tvojih ID-jeva
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const username = document.getElementById('username').value.trim();
+        const birthDate = document.getElementById('birthDate').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
 
-function showMessage(text, color) {
-    if (msg) {
-        msg.innerText = text;
-        msg.style.color = color;
-        setTimeout(() => { msg.innerText = ""; }, 4000);
-    }
-}
-
-// LOGIKA ZA LOGIN
-if (loginBtn) {
-    loginBtn.addEventListener('click', () => {
-        const username = userInp.value.trim();
-        const password = passInp.value;
-
-        if (!username || !password) {
-            showMessage("Molimo popunite sva polja!", "#e11d48");
+        // 1. Provera da li su polja prazna
+        if (!firstName || !lastName || !username || !password) {
+            msg.innerText = "Sva polja su obavezna!";
+            msg.style.color = "#ff4d4d";
             return;
         }
 
-        const rawData = localStorage.getItem(username);
-
-        if (rawData) {
-            try {
-                const userData = JSON.parse(rawData);
-
-                if (userData && userData.password === password) {
-                    showMessage(`Dobrodošli nazad, ${userData.firstName || username}!`, "#10b981");
-                    setTimeout(() => {
-                        window.location.href = "../index.html";
-                    }, 1200);
-                } else {
-                    showMessage("Netačna lozinka!", "#e11d48");
-                }
-            } catch (error) {
-                // Podrška za stare naloge koji nisu JSON
-                if (rawData === password) {
-                    showMessage("Uspešna prijava!", "#10b981");
-                    setTimeout(() => { window.location.href = "../index.html"; }, 1200);
-                } else {
-                    showMessage("Netačna lozinka!", "#e11d48");
-                }
-            }
-        } else {
-            showMessage("Korisnik nije pronađen!", "#f59e0b");
+        // 2. Provera da li se lozinke podudaraju
+        if (password !== confirmPassword) {
+            msg.innerText = "Lozinke se ne podudaraju!";
+            msg.style.color = "#ff4d4d";
+            return;
         }
-    });
-}
 
-// PREUSMERAVANJE NA REGISTRACIJU
-if (regRedirectBtn) {
-    regRedirectBtn.addEventListener('click', () => {
-        window.location.href = "register.html"; 
+        // 3. Kreiranje objekta sa podacima
+        const userData = {
+            firstName: firstName,
+            lastName: lastName,
+            password: password,
+            birthDate: birthDate
+        };
+
+        // 4. Čuvanje u localStorage (Username je ključ)
+        localStorage.setItem(username, JSON.stringify(userData));
+
+        msg.innerText = "Uspešna registracija! Preusmeravanje...";
+        msg.style.color = "#00ff88";
+
+        // Preusmeravanje na login nakon 1.5 sekunde
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1500);
     });
 }
