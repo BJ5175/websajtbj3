@@ -1,50 +1,66 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const loginBtn = document.getElementById('loginAction');
     const msg = document.getElementById('status-msg');
     const usernameInp = document.getElementById('username');
     const passwordInp = document.getElementById('password');
 
-    loginBtn.addEventListener('click', function() {
+    // Glavna funkcija za prijavu
+    function handleLogin() {
         const username = usernameInp.value.trim();
         const password = passwordInp.value;
+
+        // Resetovanje poruka
         msg.innerText = '';
         msg.style.color = '';
 
+        // 1. Validacija praznih polja
         if (!username || !password) {
-            msg.innerText = "Unesite korisničko ime i lozinku!";
-            msg.style.color = "#ff4d4d";
+            updateStatus("Unesite korisničko ime i lozinku!", "#ff4d4d");
             return;
         }
 
-        // ✅ IZVLAČI IZ LOCALSTORAGE
+        // 2. Provjera za Admina (Hardkodirani "backdoor")
+        if (username === "Admin" && password === "admin123") {
+            processLoginSuccess("Admin");
+            return;
+        }
+
+        // 3. Provjera u LocalStorage za registrovane korisnike
         const userDataRaw = localStorage.getItem(username);
-        
+
         if (userDataRaw) {
             const userData = JSON.parse(userDataRaw);
-            
+
             if (userData.password === password) {
-                // ✅ SPREMA IME ZA NAVBAR
-                localStorage.setItem('prijavljeniKorisnik', userData.firstName || username);
-                
-                msg.innerText = `Uspješno ulogovan, ${userData.firstName || username}!`;
-                msg.style.color = "#00ff88";
-                
-                // Redirect na index.html
-                setTimeout(() => {
-                    window.location.href = '/html/login_prijavljen.html';
-                }, 1000);
+                processLoginSuccess(userData.firstName || username);
             } else {
-                msg.innerText = "Pogrešna lozinka!";
-                msg.style.color = "#ff4d4d";
+                updateStatus("Pogrešna lozinka!", "#ff4d4d");
             }
         } else {
-            msg.innerText = "Korisnik ne postoji!";
-            msg.style.color = "#ffaa00";
+            updateStatus("Korisnik ne postoji!", "#ffaa00");
         }
-    });
+    }
 
-    // Enter key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') loginBtn.click();
+    // Pomoćna funkcija za uspješnu prijavu
+    function processLoginSuccess(displayName) {
+        localStorage.setItem('prijavljeniKorisnik', displayName);
+        updateStatus(`Uspješno ulogovan, ${displayName}!`, "#00ff88");
+
+        setTimeout(() => {
+            window.location.href = '/html/login_prijavljen.html';
+        }, 1000);
+    }
+
+    // Pomoćna funkcija za ispis poruka
+    function updateStatus(text, color) {
+        msg.innerText = text;
+        msg.style.color = color;
+    }
+
+    // Event Listeneri
+    loginBtn.addEventListener('click', handleLogin);
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') handleLogin();
     });
 });
